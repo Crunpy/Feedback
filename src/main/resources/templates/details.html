@@ -30,11 +30,12 @@
         <tr th:each="comp : ${companies}">
             <td th:text="Name">Name</td>
             <td th:text="${comp.name}">Firma</td>
+            <td></td>
         </tr>
 
         <tr th:each="comp : ${companies}">
             <td th:text="Bewertung">Name</td>
-            <td th:text="${comp.avgRating}">Rating</td>
+            <td class="center"> <img th:src="@{/images/star.png}" width="10" height="10" class="center" th:each="star:${#numbers.sequence(1, comp.avgRating)}"></td>
         </tr>
 
     </tbody>
