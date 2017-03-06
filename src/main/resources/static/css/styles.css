@@ -1,0 +1,107 @@
+#uberschrift
+{
+    color: blue;
+    text-align: center;
+    font-family: monospace;
+    font-size: medium;
+
+
+}
+
+body{
+    background-color:  #ffffff;
+}
+
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table.form
+{
+    margin-top: 120px;
+}
+
+table.liste
+{
+    padding-top: 2px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 2px solid #0000FF;
+}
+
+img.button
+{
+    width: 60px;
+    height: 60px;
+    margin:10px;
+    padding: 5px;
+}
+
+div.content
+{
+    margin: 20px;
+}
+
+#box1{
+    width:99%;
+    height:300px;
+
+    border-color: #000000;
+    border-width: 5px;
+    border-style: solid;
+
+    background-image: url(../images/panorama.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+#box2{
+
+    text-align: center;
+}
+
+#box3{
+    margin-left: 40%;
+    margin-top: 10%;
+}
+
+#box4{
+    width: 99%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+
+    background-color: none;
+    text-align: center;
+}
+
+#box5{
+    width: 500px;
+    height: 330px;
+    margin: auto;
+    text-align:center;
+    background-color: yellow;
+}
+
+fieldset
+{
+    border:none;
+}
+
+label > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+    vertical-align: middle;
+    border: 2px solid #000;
+}
+label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+}
+label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+    border:2px solid #000;
+}

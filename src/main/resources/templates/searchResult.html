@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>meinfeedback.at</title>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/java.js}"></script>
+</head>
+<body>
+
+<div id="uberschrift">
+
+    <table align="center">
+        <tr>
+            <td><img th:src="@{/images/logo.JPG}" width="150" height="90"/></td>
+            <td><h1>meinFeedback.at</h1></td>
+        </tr>
+    </table>
+
+    <table class="liste">
+        <thead>
+            <tr>
+               <th>Name</th>
+                <th>Bewertung</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="comp : ${companies}">
+            <td th:text="${comp.name}"> Name </td>
+            <td th:text="${comp.avgRating}">Rating</td>
+            <td> <form method="POST" action="/companies/details">
+                <button type="submit" name="name" th:value="${comp.name}">Details</button></form></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

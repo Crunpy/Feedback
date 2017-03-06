@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>meinfeedback.at</title>
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/java.js}"></script>
+</head>
+<body>
+
+<div id="uberschrift">
+
+    <table align="center">
+        <tr>
+            <td><img th:src="@{/images/logo.JPG}" width="150" height="90"/></td>
+            <td><h1>meinFeedback.at</h1></td>
+        </tr>
+    </table>
+
+</div>
+
+<div id="box1">
+
+    <div id="box2">
+        <table class="form">
+            <tr>
+
+                <form method="GET" action="http://www.google.de/search">
+                    <table>
+                        <tr>
+                            <td>
+                                <input TYPE="text" name="q" size="25" maxlength="255" placeholder="In der Nähe von">
+                                <input TYPE="hidden" name="q" value="">
+                                <input TYPE="hidden" name="hl" value="de">
+                                <input type="submit" name="btnG" VALUE="Suchen">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+
+                <form method="GET" action="http://www.google.de/search">
+                    <table>
+                        <tr>
+                            <td>
+                                <input TYPE="text" name="g" size="50" maxlength="255" placeholder="Ort oder Adresse eingeben">
+                                <input TYPE="hidden" name="q" value="">
+                                <input TYPE="hidden" name="hl" value="de">
+                                <input type="submit" name="btnG" VALUE="Geben Sie eine Adresse ein">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="box4">
+
+    <form id="button" method="POST" action="/companies/search">
+        <fieldset>
+            <legend> Kategorie wählen:</legend>
+            <label>
+                <input type="radio" name="branche" value="gewerbe" checked> <!--Gewerbe &amp; Handwerk-->
+                <img th:src="@{/images/handwerk.jpg}" class="button">
+            </label>
+
+            <label>
+                <input type="radio" name="branche" value="handel"> <!--Handel-->
+                <img th:src="@{/images/handel.jpg}" class="button">
+            </label>
+
+            <label>
+                <input type="radio" name="branche" value="tourismus"> <!--Tourismus &amp; Freizeitwirtschaft-->
+                <img th:src="@{/images/tourismus.jpg}" class="button">
+            </label>
+
+            <label>
+                <input type="radio" name="branche" value="arzt"> <!--&Auml;rzte-->
+                <img th:src="@{/images/arzt.png}" class="button">
+            </label>
+
+            <label>
+                <input type="radio" name="branche" value="beauty"> <!--Beauty &amp; Kosmetik-->
+                <img th:src="@{/images/kosmetik.jpg}" class="button">
+            </label>
+        </fieldset>
+
+
+    <div class="content gewerbe">
+        <h2>Gewerbe &amp; Handwerk</h2>
+        <select name="subGewerbe" onChange="MM_jumpMenu('self',this,0)">
+            <option value="none" selected>Bitte ausw&auml;hlen ...</option>
+            <option value="schlosserei">Schlosserei</option>
+            <option value="friseur">Friseur</option>
+            <option value="fleischerei">Fleischerei</option>
+            <option value="elektriker">Elektriker</option>
+            <option value="rauchfangkehrer">Rauchfangkehrer</option>
+            <option value="fu?pflege">Fu&szlig;pflege</option>
+            <option value="bauunternehmen">Bauunternehmen</option>
+            <option value="juwelier">Juwelier</option>
+        </select>
+    </div>
+
+    <div class="content handel" style="display:none;">
+        <h2>Handel</h2>
+        <select name="subHandel" onChange="MM_jumpMenu('self',this,0)">
+            <option value="none">Bitte ausw&auml;hlen ...</option>
+            <option value="lebensmittel">Lebensmittel</option>
+            <option value="blumen">Blumenhandlung</option>
+            <option value="b?cherei">Buchhandlung</option>
+            <option value="batterien">Batterienhandlung</option>
+            <option value="fischereizubeh?r">Fischereizubeh&ouml;r</option>
+            <option value="geschenke">Geschenke</option>
+            <option value="obst">Obst- und Gem&uuml;segro&szlig;h.</option>
+            <option value="esoterik">Esoterik</option>
+            <option value="apotheken">Apotheken und Drogerien</option>
+        </select>
+    </div>
+
+    <div class="content tourismus" style="display:none;">
+        <h2>Tourismus &amp; Freizeitwirtschaft</h2>
+        <select name="subTourismus" onChange="MM_jumpMenu('self',this,0)">
+            <option value="none" selected>Bitte ausw&auml;hlen ...</option>
+            <option value="heuriger">Heuriger</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="schnellimbiss">Schnell Imbiss</option>
+            <option value="cafe">Cafe</option>
+            <option value="reiseb?ro">Reiseb&uuml;ro</option>
+        </select>
+    </div>
+
+    <div class="content arzt" style="display:none;">
+        <h2>&Auml;rzte</h2>
+        <select name="subArzt" onChange="MM_jumpMenu('self',this,0)">
+            <option value="none" selected>Bitte ausw&auml;hlen ...</option>
+            <option value="zahnarzt">Zahnarzt</option>
+        </select>
+    </div>
+
+    <div class="content beauty" style="display:none;">
+        <h2>Beauty &amp; Kosmetik</h2>
+        <select name="subBeauty" onChange="MM_jumpMenu('self',this,0)">
+            <option value="none" selected>Bitte ausw&auml;hlen ...</option>
+            <option value="massage">Massage</option>
+        </select>
+    </div>
+        <input type="submit" value="Suchen">
+    </form>
+    <form method="GET" action="/companies/list">
+        <input type="submit" value="Alle" >
+    </form>
+</div>
+
+</body>
+    </html>
